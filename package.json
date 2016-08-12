@@ -1,9 +1,12 @@
 {
   "name": "spinvision",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "absoludo",
+  "main": "app.js",
   "scripts": {
+    "go": "npm build && npm serve",
+    "serve": "node_modules/.bin/http-server",
+    "build": "browserify public/app.js -o public/bundle.js -t [ babelify --presets [ es2015 react ] ]",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -11,7 +14,7 @@
     "url": "git+https://github.com/dominic-taylor/spinvision.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "dominic-taylor",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/dominic-taylor/spinvision/issues"
@@ -19,6 +22,10 @@
   "homepage": "https://github.com/dominic-taylor/spinvision#readme",
   "dependencies": {
     "babel-preset-react": "^6.11.1",
-    "babelify": "^7.3.0"
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.0",
+    "http-server": "^0.9.0",
+    "react": "^15.3.0",
+    "react-dom": "^15.3.0"
   }
 }
