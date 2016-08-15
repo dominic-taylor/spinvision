@@ -1,9 +1,9 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-var Title = React.createClass({
+const Title = React.createClass({
   render: function () {
-    var title = "Hi !!";
+    var title = "SpinVision";
     return <div><h1>{title}</h1></div>;
   }
 });
