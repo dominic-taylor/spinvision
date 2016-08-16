@@ -20,7 +20,8 @@ var Search = _react2.default.createClass({
       null,
       _react2.default.createElement("input", { type: "text", placeholder: "Actor" }),
       _react2.default.createElement("input", { type: "text", placeholder: "Genre" }),
-      _react2.default.createElement("input", { type: "text", placeholder: "Length" })
+      _react2.default.createElement("input", { type: "text", placeholder: "Length" }),
+      _react2.default.createElement("input", { type: "submit", name: "Search" })
     );
   }
 });
