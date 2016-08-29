@@ -3,30 +3,15 @@ import key from '../keys.js'
 import Request from 'superagent';
 
 
-class Search extends React.Component {
-
-  constructor(){
-    super();
-    this.state = {};
-  }
-
-  componentWillMount(){
-    this.search();
-  }
-
-  render(){
-      console.log('this.state.movies', this.state.movies)
-      var movies = this.state.movies;
-      console.log('movies', movies)
-      movies.map(function(movie) {
-        return <li>{movies.title}</li>
-      });
-      return <div>{movies}
-      </div>
+var Search = React.createClass ({
+  getInitialState(){
+    return {
+      movies: 'Men In Black'
     };
+  },
 
-
-  search(){
+  componentDidMount(){
+    console.log('compdidmount')
     var url = `http://api.themoviedb.org/3/discover/movie?${key}`;
     Request.get(url).then((response) => {
       console.log('response.body.results', response.body.results)
@@ -34,13 +19,48 @@ class Search extends React.Component {
         movies: response.body.results
       });
     });
-  }
+  },
 
-}
+  componentWillUnmount(){
+    // this.search();
+  },
+
+  render(){
+    // if(this.state.movies === undefined){
+    //   return null
+    // };
+
+      // var movies = this.state.movies.map(function(movie) {
+      //   return <li>{movie.title}</li>
+      // });
+
+      return <div>{this.movies}</div>
+      console.log('this.movies', this.movies)
+
+      // console.log('this.state.movies', this.state.movies)
+      // console.log('movies', movies)
+
+      // return <div>{movies}
+      // </div>
+    },
+
+//  search(){
+    // var url = `http://api.themoviedb.org/3/discover/movie?${key}`;
+    // Request.get(url).then((response) => {
+    //   console.log('response.body.results', response.body.results)
+    //   this.setState({
+    //     movies: response.body.results
+    //   });
+    // });
+//  }
+
+});
+
+export default Search;
 
 
 
-  // render: function () {
+// render: function () {
 //     return <div>
 //     <select>
 //       <option ref="28" value="28">Action</option>
@@ -74,10 +94,3 @@ class Search extends React.Component {
 //
 //
 // });
-
-
-
-
-
-
-export default Search;
