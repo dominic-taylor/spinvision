@@ -3,7 +3,7 @@ import key from '../keys.js'
 import Request from 'superagent';
 
 
-var Search = React.createClass ({
+let Search = React.createClass ({
   getInitialState(){
     return {
       movies: 'Men In Black'
@@ -12,11 +12,13 @@ var Search = React.createClass ({
 
   componentDidMount(){
     console.log('compdidmount')
-    var url = `http://api.themoviedb.org/3/discover/movie?${key}`;
+    let url = `http://api.themoviedb.org/3/discover/movie?${key}`;
     Request.get(url).then((response) => {
       console.log('response.body.results', response.body.results)
       this.setState({
-        movies: response.body.results
+        movies: response.body.results.map(function(movie){
+          return movie.title
+        })
       });
     });
   },
@@ -30,18 +32,12 @@ var Search = React.createClass ({
     //   return null
     // };
 
-      // var movies = this.state.movies.map(function(movie) {
-      //   return <li>{movie.title}</li>
-      // });
+      console.log(this.state.movies)
+      // var movies = this.state.movies.map( function(movie){
+      //     return (<li>{movie.title}</li> ) });
 
-      return <div>{this.movies}</div>
-      console.log('this.movies', this.movies)
 
-      // console.log('this.state.movies', this.state.movies)
-      // console.log('movies', movies)
-
-      // return <div>{movies}
-      // </div>
+      return <div><ul>{this.state.movies}</ul></div>;
     },
 
 //  search(){
