@@ -6,7 +6,7 @@ import Request from 'superagent';
 let Search = React.createClass ({
   getInitialState(){
     return {
-      movies: 'Men In Black'
+      movies: ['Men In Black']
     };
   },
 
@@ -28,28 +28,17 @@ let Search = React.createClass ({
   },
 
   render(){
-    // if(this.state.movies === undefined){
-    //   return null
-    // };
-
       console.log(this.state.movies)
-      // var movies = this.state.movies.map( function(movie){
-      //     return (<li>{movie.title}</li> ) });
-
-
-      return <div><ul>{this.state.movies}</ul></div>;
-    },
-
-//  search(){
-    // var url = `http://api.themoviedb.org/3/discover/movie?${key}`;
-    // Request.get(url).then((response) => {
-    //   console.log('response.body.results', response.body.results)
-    //   this.setState({
-    //     movies: response.body.results
-    //   });
-    // });
-//  }
-
+      return (
+        <div>
+          <ul>
+            {this.state.movies.map( function(movie){
+              return <li key={movie.id}>{movie}</li> })}
+          </ul>
+        </div>
+      );
+  }
+  
 });
 
 export default Search;
