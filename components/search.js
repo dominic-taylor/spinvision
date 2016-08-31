@@ -1,7 +1,7 @@
 import React from 'react';
-import key from '../keys.js'
+import key from '../keys.js';
 import Request from 'superagent';
-
+import Results from './results.js';
 
 let Search = React.createClass ({
   getInitialState(){
@@ -33,12 +33,13 @@ let Search = React.createClass ({
         <div>
           <ul>
             {this.state.movies.map( function(movie){
-              return <li key={movie.id}>{movie}</li> })}
+              return <Results key={movie.id} data={movie}/>;
+            })}
           </ul>
         </div>
       );
   }
-  
+
 });
 
 export default Search;
