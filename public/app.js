@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Search from '../components/search.js'
+import Search from '../components/search.js';
 
 const Title = React.createClass({
   render: function () {
