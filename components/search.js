@@ -23,10 +23,6 @@ let Search = React.createClass ({
     });
   },
 
-  componentWillUnmount(){
-    // this.search();
-  },
-
   render(){
       console.log(this.state.movies)
       return (
