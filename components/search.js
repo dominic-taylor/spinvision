@@ -12,14 +12,14 @@ let Search = React.createClass ({
     };
   },
 
-  // componentDidMount(){
-  //   console.log('compdidmount')
-  //
-  // },
+  componentDidMount(){
+    console.log('compdidmount')
+    this.getMovies();
+  },
 
   getMovies(){
     let genre = this.state.genreValue;
-    let url   = `http://api.themoviedb.org/3/discover/movie?${key}&with_genres=${genre}`;
+    let url = `http://api.themoviedb.org/3/discover/movie?${key}&with_genres=${genre}`;
     Request.get(url).then((response) => {
       console.log('response.body.results', response.body.results)
       this.setState({

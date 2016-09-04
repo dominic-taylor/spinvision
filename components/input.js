@@ -7,7 +7,7 @@ let Input = React.createClass ({
 
   selectHandler(){
     console.log('genreValue prop', this.props.genre);
-    this.props.onGenreChanged("35")
+    this.props.onGenreChanged(this.refs.genre.value);
   },
 
   render() {
@@ -43,7 +43,7 @@ let Input = React.createClass ({
         <option ref="type" type="text" placeholder="Type"/>
       </select>
 
-      <input onClick={this.selectHandler.bind(this)} type="submit" value="Submit"/>
+      <input onClick={this.selectHandler} type="submit" value="Submit"/>
       </div>
     }
 });
