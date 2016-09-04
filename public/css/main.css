@@ -1,8 +1,17 @@
 #content {
   text-align: center;
   color: blue;
+  font-family: 'Roboto', sans-serif;
 }
 
+h1 {
+  font-size: 40px;
+  letter-spacing: 5px;
+}
+
+ul {
+  padding: 0px;
+}
 
 li {
   list-style: none;
