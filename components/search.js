@@ -14,7 +14,7 @@ let Search = React.createClass ({
 
   componentDidMount(){
     console.log('compdidmount')
-    this.getMovies();
+    this.getMovies()
   },
 
   getMovies(){
@@ -32,7 +32,7 @@ let Search = React.createClass ({
 
   handleGenre(newGenre) {
     this.setState({ genreValue: newGenre })
-    this.getMovies();
+    return this.getMovies();
   },
 
   render(){

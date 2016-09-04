@@ -2,3 +2,16 @@
   text-align: center;
   color: blue;
 }
+
+
+li {
+  list-style: none;
+  padding: 5px;
+  background: black;
+  color: white;
+}
+
+li:nth-child(odd){
+  background: white;
+  color: black;
+}
