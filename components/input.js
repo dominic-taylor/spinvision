@@ -7,7 +7,7 @@ let Input = React.createClass ({
 
   selectHandler(value){
     var value = this.refs.genre.value
-    return this.props.onGenreChanged(value);
+    return this.props.onGenreChanged(this.refs.genre.value);
   },
 
   render() {

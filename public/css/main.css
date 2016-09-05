@@ -24,3 +24,9 @@ li:nth-child(odd){
   background: white;
   color: black;
 }
+
+button {
+  display: block;
+  margin: auto;
+  margin-top: 15px;
+}
