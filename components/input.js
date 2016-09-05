@@ -5,12 +5,14 @@ import Results from './results.js';
 
 let Input = React.createClass ({
 
-  selectHandler(){
-    console.log('genreValue prop', this.props.genre);
-    this.props.onGenreChanged(this.refs.genre.value);
+  selectHandler(value){
+    var value = this.refs.genre.value
+    return this.props.onGenreChanged(this.refs.genre.value);
   },
 
   render() {
+    console.log('genreValue prop', this.props.genre);
+    console.log('refs', this.refs.genre)
       return <div>
       <select ref="genre">
         <option value="28">Action</option>
@@ -43,7 +45,7 @@ let Input = React.createClass ({
         <option ref="type" type="text" placeholder="Type"/>
       </select>
 
-      <input onClick={this.selectHandler} type="submit" value="Submit"/>
+      <button onClick={this.selectHandler} value="SPIN">SPIN</button>
       </div>
     }
 });

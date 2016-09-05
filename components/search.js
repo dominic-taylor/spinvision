@@ -14,7 +14,7 @@ let Search = React.createClass ({
 
   componentDidMount(){
     console.log('compdidmount')
-    this.getMovies();
+    this.getMovies()
   },
 
   getMovies(){
@@ -30,17 +30,22 @@ let Search = React.createClass ({
     });
   },
 
+  componentDidUpdate(prevProps, prevState) {
+     if (prevState.genreValue !== this.state.genreValue) {
+         this.getMovies();
+     }
+ },
+
   handleGenre(newGenre) {
     this.setState({ genreValue: newGenre })
-    this.getMovies();
   },
 
   render(){
-      console.log(this.state.movies)
+      console.log(this.state)
       console.log('genreValue state', this.state.genreValue)
       return (
         <div>
-          <Input genre={this.state.genreValue} onGenreChanged={this.handleGenre}/>
+          <Input onGenreChanged={this.handleGenre}/>
           <ul>
             {this.state.movies.map( function(movie){
               return <Results key={movie.id} data={movie}/>;
