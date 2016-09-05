@@ -5,15 +5,16 @@ import Results from './results.js';
 
 let Input = React.createClass ({
 
-  componentDidMount(){
-    console.log('big juicy meat')
+  selectHandler(){
+    console.log('genreValue prop', this.props.genre);
+    this.props.onGenreChanged(this.refs.genre.value);
   },
 
   render() {
       return <div>
-      <select>
-        <option ref="28" value="28">Action</option>
-        <option ref="12" value="12">Adventure</option>
+      <select ref="genre">
+        <option value="28">Action</option>
+        <option value="12">Adventure</option>
         <option value="16">Animation</option>
         <option value="35">Comedy</option>
         <option value="80">Crime</option>
@@ -42,7 +43,7 @@ let Input = React.createClass ({
         <option ref="type" type="text" placeholder="Type"/>
       </select>
 
-      <input type="submit" value="Submit"/>
+      <input onClick={this.selectHandler} type="submit" value="Submit"/>
       </div>
     }
 });
