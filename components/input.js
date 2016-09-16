@@ -5,9 +5,8 @@ import Results from './results.js';
 
 let Input = React.createClass ({
 
-  selectHandler(value){
-    var value = this.refs.genre.value
-    return this.props.onGenreChanged(this.refs.genre.value);
+  selectHandler(){
+    return this.props.onGenreChanged(this.refs.genre.value, this.refs.media.value, this.refs.year.value);
   },
 
   render() {
@@ -37,12 +36,16 @@ let Input = React.createClass ({
         <option value="37">Western</option>
       </select>
 
-      <select>
-        <option ref="rating" type="text" placeholder="Rating"/>
+      <select ref="media">
+        <option value="tv">TV</option>
+        <option value="movie">Movie</option>
       </select>
 
-      <select>
-        <option ref="type" type="text" placeholder="Type"/>
+      <select ref="year">
+        <option value="1999">1999</option>
+        <option value="2000">2000</option>
+        <option value="1970">1970</option>
+
       </select>
 
       <button onClick={this.selectHandler} value="SPIN">SPIN</button>

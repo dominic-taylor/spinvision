@@ -8,7 +8,9 @@ let Search = React.createClass ({
   getInitialState(){
     return {
       movies: ['Men In Black'],
-      genreValue: '12'
+      genreValue: '12',
+      mediaType: 'movie',
+      yearOfRelease: '2016'
     };
   },
 
@@ -19,7 +21,14 @@ let Search = React.createClass ({
 
   getMovies(){
     let genre = this.state.genreValue;
-    let url = `http://api.themoviedb.org/3/discover/movie?${key}&with_genres=${genre}`;
+    let media = this.state.mediaType;
+    let year = this.state.yearOfRelease;
+    if(media === 'movie'){
+      var releaseYear = 'primary_release_year'
+    } else{
+      var releaseYear = 'first_air_date_year'
+    }
+    let url = `http://api.themoviedb.org/3/discover/${media}?${key}&with_genres=${genre}&${releaseYear}=${year}`;
     Request.get(url).then((response) => {
       console.log('response.body.results', response.body.results)
       this.setState({
@@ -34,10 +43,19 @@ let Search = React.createClass ({
      if (prevState.genreValue !== this.state.genreValue) {
          this.getMovies();
      }
+     if (prevState.mediaType !== this.state.mediaType) {
+         this.getMovies();
+     }
+     if (prevState.yearOfRelease !== this.state.yearOfRelease) {
+            this.getMovies();
+      }
  },
 
-  handleGenre(newGenre) {
-    this.setState({ genreValue: newGenre })
+  handleGenre(newGenre, newMedia, newYear) {
+    this.setState({ genreValue: newGenre,
+                    mediaType: newMedia,
+                    yearOfRelease: newYear
+     })
   },
 
   render(){
