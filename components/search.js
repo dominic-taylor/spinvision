@@ -7,7 +7,7 @@ import Input from './input.js';
 let Search = React.createClass ({
   getInitialState(){
     return {
-      movies: ['Men In Black'],
+      movies: ['', 1],
       genreValue: '12',
       mediaType: 'movie',
       yearOfRelease: '2016'
@@ -15,7 +15,6 @@ let Search = React.createClass ({
   },
 
   componentDidMount(){
-    console.log('compdidmount')
     this.getMovies()
   },
 
@@ -31,10 +30,11 @@ let Search = React.createClass ({
     let url = `http://api.themoviedb.org/3/discover/${media}?${key}&with_genres=${genre}&${releaseYear}=${year}`;
 
     Request.get(url).then((response) => {
-      console.log('response.body.results', response.body.results)
+    //  console.log('response.body.results', response.body.results)
       this.setState({
         movies: response.body.results.map(function(movie){
-          return movie.title
+          console.log(movie.title, movie.id)
+          return ([movie.title, movie.id])
         })
       });
     });
@@ -58,13 +58,14 @@ let Search = React.createClass ({
 
   render(){
       console.log(this.state)
-      console.log('genreValue state', this.state.genreValue)
+      console.log('movies state', this.state.movies)
       return (
         <div>
           <Input onGenreChanged={this.handleGenre}/>
           <ul>
-            {this.state.movies.map( function(movie){
-              return <Results key={movie.id} data={movie}/>;
+            {this.state.movies.map( function(movie, index){
+            
+              return (<Results key={index} data={movie[0]}/>);
             })}
           </ul>
         </div>
