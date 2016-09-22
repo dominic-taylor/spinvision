@@ -21,7 +21,7 @@ let Search = React.createClass ({
 
   getMovies(){
     let genre = this.state.genreValue;
-    let media = this.state.mediaType;
+    let media = 'movie'
     let year = this.state.yearOfRelease;
     if(media === 'movie'){
       var releaseYear = 'primary_release_year'
@@ -29,6 +29,7 @@ let Search = React.createClass ({
       var releaseYear = 'first_air_date_year'
     }
     let url = `http://api.themoviedb.org/3/discover/${media}?${key}&with_genres=${genre}&${releaseYear}=${year}`;
+
     Request.get(url).then((response) => {
       console.log('response.body.results', response.body.results)
       this.setState({
@@ -41,9 +42,6 @@ let Search = React.createClass ({
 
   componentDidUpdate(prevProps, prevState) {
      if (prevState.genreValue !== this.state.genreValue) {
-         this.getMovies();
-     }
-     if (prevState.mediaType !== this.state.mediaType) {
          this.getMovies();
      }
      if (prevState.yearOfRelease !== this.state.yearOfRelease) {
