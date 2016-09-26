@@ -1,13 +1,13 @@
 import React from 'react';
-import key from '../keys.js';
 import Request from 'superagent';
+import key from '../../keys.js';
 import Results from './results.js';
 import Input from './input.js';
 
 let Search = React.createClass ({
   getInitialState(){
     return {
-      movies: ['', 1],
+      movies: [{title: '', id: ''}],
       genreValue: '12',
       mediaType: 'movie',
       yearOfRelease: '2016'
@@ -34,7 +34,7 @@ let Search = React.createClass ({
       this.setState({
         movies: response.body.results.map(function(movie){
           console.log(movie.title, movie.id)
-          return ([movie.title, movie.id])
+          return ({title: movie.title, id: movie.id})
         })
       });
     });
@@ -64,8 +64,8 @@ let Search = React.createClass ({
           <Input onGenreChanged={this.handleGenre}/>
           <ul>
             {this.state.movies.map( function(movie, index){
-            
-              return (<Results key={index} data={movie[0]}/>);
+
+              return (<Results key={movie.id} data={movie.title}/>);
             })}
           </ul>
         </div>
