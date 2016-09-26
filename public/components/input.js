@@ -1,5 +1,4 @@
 import React from 'react';
-import key from '../keys.js';
 import Request from 'superagent';
 import Results from './results.js';
 
