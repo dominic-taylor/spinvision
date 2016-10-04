@@ -1,8 +1,11 @@
 import {combineReducers} from 'redux';
+
 import MovieReducer from './reducer-movies';
+import InputReducer from './reducer-input';
 
-const allReducers = combineReducers({
-    movies: MovieReducer
+
+var allReducers = combineReducers({
+  movies: MovieReducer,
+  input: InputReducer
 });
-
 export default allReducers;
