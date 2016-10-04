@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Request from 'superagent';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {updateYear, updateList} from '../actions/index';
+import {updateYear, updateList, updateGenre} from '../actions/index';
 import store from '../store';
 import key from '../../keys.js';
 
@@ -12,7 +12,7 @@ class InputParams extends Component {
    this.makeRequest();
   }
   makeRequest() {
-         let genre = this.props.genre;
+         let genre = this.props.genre; // need way of this changing.
          let media = 'movie'
          let year = this.props.year;
          let url = `http://api.themoviedb.org/3/discover/${media}?${key}&with_genres=${genre}&primary_release_year=${year}`;
@@ -32,9 +32,16 @@ handleYear(e){
     year: e.target.value
   });
 };
+handleGenre(e){
+  store.dispatch({
+    type: 'UPDATE_GENRE',
+    genre: e.target.value
+  });
+};
+
   render() {
     return <div>
-    <select ref="genre" defaultValue="12" >
+    <select ref="genre" defaultValue="12" onChange={this.handleGenre}>
       <option value="28">Action</option>
       <option value="12">Adventure</option>
       <option value="16">Animation</option>
@@ -80,7 +87,8 @@ function mapStateToProps(state){
 }
 function mapDispatchToProps(dispatch){
   return bindActionCreators({updateYear: updateYear,
-                            updateList: updateList}, dispatch);
+                            updateList: updateList,
+                            updateGenre: updateGenre}, dispatch);
 
 }
 

@@ -11,3 +11,9 @@ export function updateYear(year){
     year: year
   }
 };
+export function updateGenre(genre){
+  return{
+    type: "UPDATE_GENRE",
+    genre: genre
+  }
+};
