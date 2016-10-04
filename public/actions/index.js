@@ -1,5 +1,4 @@
 export function updateList(movies){
-  console.log("CLiky clicky")
   return {
     type: "UPDATE_MOVIES",
     movies: movies

@@ -1,22 +1,19 @@
 import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import updateList from '../actions/index';
 
 class MovieList extends Component {
 
   createListItems() {
     return this.props.movies.map((movie)=>{
-      return (
-          <li key={movie.id}>{movie.title}</li>
-       );
+      return (<li key={movie.id}>{movie.title}</li>);
     });
   };
 
   render(){
         return (
           <ul>
-            {this.createListItems()}ç
+            {this.createListItems()}
           </ul>
         );
     }
@@ -24,12 +21,8 @@ class MovieList extends Component {
 
   function mapStateToProps(state){
       return {
-        movies: state.movies
+        movies: state.movies.movieList
       }
   }
-  function mapDispatchToProps(dispatch){
-    return bindActionCreators({updateList: updateList}, dispatch)
 
-  }
-
-export default connect(mapStateToProps, mapDispatchToProps)(MovieList);
+export default connect(mapStateToProps)(MovieList);
