@@ -7,7 +7,7 @@ import Input from './input.js';
 let Search = React.createClass ({
   getInitialState(){
     return {
-      movies: [{title: '', id: ''}],
+      movies: [{title: '', id: '1'}],
       genreValue: '12',
       mediaType: 'movie',
       yearOfRelease: '2016'
