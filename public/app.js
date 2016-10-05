@@ -1,16 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Search from '../components/search.js';
+import Search from './components/search.js';
+import {createStore} from 'redux';
+import {Provider} from 'react-redux';
+import allReducers from './reducers';
 
-const Title = React.createClass({
-  render: function () {
-    var title = "SpinVision";
-    return <div><h1>{title}</h1>
-    <Search /></div>;
+//const store = createStore(allReducers);
+
+const App = React.createClass({
+  render() {
+    return (
+    <div>
+        <h1>SpinVision</h1>
+            <Search />
+    </div>
+    );
   }
 });
 
 ReactDOM.render(
-  <Title />,
-  document.getElementById('content')
+  //<Provider store={store} >
+  <App />
+  //</ Provider>,
+  ,document.getElementById('content')
 );
