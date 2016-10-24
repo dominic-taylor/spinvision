@@ -1,3 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
+.col-1 {width: 20%}
+.col-2 {width: 40%}
+.col-3 {width: 60%}
+.col-4 {width: 80%}
+.col-5 {width: 100%}
+
+
 #content {
   text-align: center;
   color: blue;
@@ -13,10 +24,12 @@ ul {
   padding: 0px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 li {
   list-style: none;
+  width: 155px;
   padding: 5px;
   background: black;
   color: white;
@@ -25,6 +38,10 @@ li {
 li:nth-child(odd){
   background: white;
   color: black;
+}
+
+div {
+  padding: 10px;
 }
 
 button {
