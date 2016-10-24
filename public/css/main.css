@@ -11,6 +11,8 @@ h1 {
 
 ul {
   padding: 0px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 li {
