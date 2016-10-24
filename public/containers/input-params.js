@@ -21,9 +21,10 @@ class InputParams extends Component {
           store.dispatch({
             type: 'UPDATE_MOVIES',
             movies: response.body.results.map(function(movie){
-              return ({title: movie.title, id: movie.id})
+              return ({title: movie.title, id: movie.id, poster: movie.poster_path})
             })
           });
+          console.log(response.body);
         });
 };
 handleYear(e){
