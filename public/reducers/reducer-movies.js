@@ -4,12 +4,13 @@ const initialState = { movieList:
                         [
                           {
                             title: '',
-                            id: '1'
+                            id: '1',
+                            poster: ''
                           },
                           {
                             title: '',
-                            id: '45'
-
+                            id: '45',
+                            poster: ''
                           }
                         ]
                       };
