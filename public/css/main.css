@@ -30,17 +30,14 @@ ul {
 li {
   list-style: none;
   width: 155px;
-  padding: 5px;
-  background: black;
-  color: white;
-}
-
-li:nth-child(odd){
-  background: white;
   color: black;
 }
 
-div {
+li img {
+  bottom: 0;
+}
+
+div.movieList {
   padding: 10px;
 }
 
