@@ -7,8 +7,9 @@ class MovieList extends Component {
   createListItems() {
     return this.props.movies.map((movie)=>{
       var poster = movie.poster;
-      return (<div>
-        <li key={movie.id}>{movie.title}<img src={`https://image.tmdb.org/t/p/w154${poster}`} alt='movie poster'></img></li>
+      return (<div className="movieList">
+        <img src={`https://image.tmdb.org/t/p/w154${poster}`} alt='movie poster'></img>
+        <li key={movie.id}><p>{movie.title}</p></li>
         </div>);
     });
   };
