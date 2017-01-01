@@ -9,7 +9,9 @@ class MovieList extends Component {
       var poster = movie.poster;
       return (<div className="movieList">
         <img src={`https://image.tmdb.org/t/p/w154${poster}`} alt='movie poster'></img>
-        <li key={movie.id}><p>{movie.title}</p></li>
+        <div className="description">{movie.description}</div>
+        <li key={movie.id}><p>{movie.title}</p>
+        </li>
         </div>);
     });
   };
