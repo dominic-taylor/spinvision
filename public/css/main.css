@@ -21,15 +21,29 @@
   background-color: green;
 }*/
 
-img:hover ~ .description {
+.poster {
+  position: relative;
+}
+
+.poster:hover {
+  opacity: 0.5;
+}
+
+.poster:hover > .description {
   display: block;
-  background-color: yellow;
+  z-index: 10;
 }
 
 .description {
-  background-color: green;
+  color: black;
   display: none;
   position: absolute;
+  width: 100%;
+  height: 95%;
+  top: 0;
+  left: 0;
+  padding: 12px;
+  overflow: scroll;
 }
 
 h1 {
@@ -45,15 +59,15 @@ ul {
 }
 
 li {
+  margin: 0;
   list-style: none;
   width: 155px;
   color: black;
 }
 
-li img {
-  bottom: 0;
+li p{
+  margin: 10px;
 }
-
 div.movieList {
   padding: 10px;
   position: relative;
