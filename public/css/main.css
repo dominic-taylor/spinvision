@@ -15,17 +15,11 @@
   font-family: 'Roboto', sans-serif;
 }
 
-
-/*.description:hover {
-  display: block;
-  background-color: green;
-}*/
-
 .poster {
   position: relative;
 }
 
-.poster:hover {
+.poster:hover > img {
   opacity: 0.5;
 }
 
@@ -65,9 +59,10 @@ li {
   color: black;
 }
 
-li p{
+li p {
   margin: 10px;
 }
+
 div.movieList {
   padding: 10px;
   position: relative;
