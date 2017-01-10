@@ -33,11 +33,11 @@
   display: none;
   position: absolute;
   width: 100%;
-  height: 95%;
+  height: 98%;
   top: 0;
   left: 0;
   padding: 12px;
-  overflow: scroll;
+  overflow-y: auto;
 }
 
 h1 {

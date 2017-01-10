@@ -4,7 +4,6 @@
   "description": "absoludo",
   "main": "app.js",
   "scripts": {
-    "go": "npm run build && npm run serve",
     "serve": "node_modules/.bin/http-server",
     "build": "browserify public/app.js -o public/bundle.js -t [ babelify --presets [ es2015 react ] ]",
     "test": "echo \"Error: no test specified\" && exit 1",
