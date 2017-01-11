@@ -23920,7 +23920,7 @@ var InputParams = function (_Component) {
       var genre = this.props.genre; // need way of this changing.
       var media = 'movie';
       var year = this.props.year;
-      var url = 'http://api.themoviedb.org/3/discover/' + media + '?' + _keys2.default + '&with_genres=' + genre + '&primary_release_year=' + year;
+      var url = 'https://api.themoviedb.org/3/discover/' + media + '?' + _keys2.default + '&with_genres=' + genre + '&primary_release_year=' + year;
 
       _superagent2.default.get(url).then(function (response) {
         _store2.default.dispatch({
