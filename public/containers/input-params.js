@@ -74,7 +74,7 @@ handleGenre(e){
       onChange={this.handleYear}/>
       <div>Year: {this.props.year}</div>
 
-      <button onClick={() => this.makeRequest()} value="SPIN">SPIN</button>
+      <button onClick={() => this.makeRequest()} value="SPIN" className="btn">SPIN</button>
       </div>
     }
 }

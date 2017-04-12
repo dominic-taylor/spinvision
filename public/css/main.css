@@ -1,7 +1,9 @@
 * {
   box-sizing: border-box;
 }
-
+body{
+  background-color: #f0f8ff;
+}
 .col-1 {width: 20%}
 .col-2 {width: 40%}
 .col-3 {width: 60%}
@@ -11,7 +13,6 @@
 
 #content {
   text-align: center;
-  color: blue;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -20,7 +21,7 @@
 }
 
 .poster:hover > img {
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 .poster:hover > .description {
@@ -39,7 +40,9 @@
   padding: 12px;
   overflow-y: auto;
 }
-
+select{
+  background-color: #ffffff;
+}
 h1 {
   font-size: 40px;
   letter-spacing: 5px;
@@ -73,3 +76,25 @@ button {
   margin: auto;
   margin-top: 15px;
 }
+.btn {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 12;
+  -moz-border-radius: 12;
+  border-radius: 12px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}
+
