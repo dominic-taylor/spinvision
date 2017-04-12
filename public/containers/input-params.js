@@ -15,7 +15,7 @@ class InputParams extends Component {
          let genre = this.props.genre; // need way of this changing.
          let media = 'movie'
          let year = this.props.year;
-         let url = `http://api.themoviedb.org/3/discover/${media}?${key}&with_genres=${genre}&primary_release_year=${year}`;
+         let url = `https://api.themoviedb.org/3/discover/${media}?${key}&with_genres=${genre}&primary_release_year=${year}`;
 
         Request.get(url).then((response) => {
           store.dispatch({
@@ -74,7 +74,7 @@ handleGenre(e){
       onChange={this.handleYear}/>
       <div>Year: {this.props.year}</div>
 
-      <button onClick={() => this.makeRequest()} value="SPIN">SPIN</button>
+      <button onClick={() => this.makeRequest()} value="SPIN" className="btn">SPIN</button>
       </div>
     }
 }
