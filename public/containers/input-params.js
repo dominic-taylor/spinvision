@@ -41,6 +41,8 @@ handleGenre(e){
 };
 
   render() {
+    let currentYear = new Date().getFullYear();
+
     return <div>
     <select ref="genre" defaultValue="12" onChange={this.handleGenre}>
       <option value="28">Action</option>
@@ -70,7 +72,7 @@ handleGenre(e){
       </select>
 
       <input
-      type="range"  min="1900" max="2016" defaultValue="2016" id="date" ref="year"
+      type="range"  min="1900" max={currentYear + 2} defaultValue={currentYear} id="date" ref="year"
       onChange={this.handleYear}/>
       <div>Year: {this.props.year}</div>
 
