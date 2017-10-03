@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import store from './store';
-import InputParams from './containers/input-params';
-import MovieList from './containers/movie-list'
+import Header from './containers/Header'
+import InputParams from './containers/InputParams';
+import MovieList from './containers/MovieList'
 
 
 
@@ -11,8 +12,7 @@ const App = React.createClass({
   render() {
     return (
     <div>
-        <h1>SpinVision</h1>
-            <InputParams />
+            <Header />
             <MovieList />
     </div>
     );

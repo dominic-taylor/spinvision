@@ -12,8 +12,27 @@ body{
 
 
 #content {
-  text-align: center;
+  max-width: 100%;
   font-family: 'Roboto', sans-serif;
+}
+
+.headingBox {
+  padding: 1rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid black;
+}
+.inputBox{
+  display: block;
+  margin: 0; 
+}
+.inputBox p, .inputBox label {
+  margin: auto;
+}
+.movieList {
+  text-align: center;
+  margin: auto;
+  position: relative;
 }
 
 .poster {
@@ -21,15 +40,20 @@ body{
 }
 
 .poster:hover > img {
-  opacity: 0.3;
+  height: 98%;
+  opacity: 0.1;
 }
 
 .poster:hover > .description {
+    height: 98%;
+
   display: block;
   z-index: 10;
 }
 
 .description {
+    border: 1px solid black;
+
   color: black;
   display: none;
   position: absolute;
@@ -41,6 +65,8 @@ body{
   overflow-y: auto;
 }
 select{
+  width: 100%;
+  margin: auto 0.5rem;
   background-color: #ffffff;
 }
 h1 {
@@ -56,6 +82,9 @@ ul {
 }
 
 li {
+ min-height: 150px;
+  width: 100%;
+  border-bottom: 1px solid;
   margin: 1rem;
   list-style: none;
   width: 155px;
@@ -65,37 +94,35 @@ li {
 li p {
   margin: 10px;
 }
-
-.movieList {
-  margin: auto;
-  padding: 1rem;
-  position: relative;
+.title {
+  font-weight: bold;
 }
 
-button {
+.btn {
   display: block;
   margin: auto;
   margin-top: 15px;
-}
-.btn {
-  background: #3498db;
-  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
-  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
-  background-image: -o-linear-gradient(top, #3498db, #2980b9);
-  background-image: linear-gradient(to bottom, #3498db, #2980b9);
-  -webkit-border-radius: 12;
-  -moz-border-radius: 12;
-  border-radius: 12px;
+  border: 1px solid black;
+  background: #FF4136;
   font-family: Arial;
   color: #ffffff;
-  font-size: 20px;
+  font-size: 1.20rem;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
 }
 
 .btn:hover {
-  background: #3cb0fd;
+  background: #2ECC40;
   text-decoration: none;
 }
 
+@media screen and (min-width: 480px) {
+  li {
+  
+    border: none;
+  }
+  .inputBox{
+    display: flex;
+    margin: 1rem 5rem; 
+  } 
+}
