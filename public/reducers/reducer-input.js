@@ -3,7 +3,7 @@ import {updateYear, updateGenre} from '../actions'
 const initialState = {
   genreValue: '12',
   mediaType: 'movie',
-  yearOfRelease: '2016'
+  yearOfRelease: new Date().getFullYear()
 };
 
 const inputReducer = function(state = initialState, action){
